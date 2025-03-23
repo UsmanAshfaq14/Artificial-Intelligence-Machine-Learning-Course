@@ -20,9 +20,9 @@ Correlation is a statistical measure that expresses the degree to which two vari
 ### Key Formula
 The **Pearson correlation coefficient** is one of the most commonly used measures and is defined as:
 
-\[
+$$
 r = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2 \sum_{i=1}^{n}(y_i - \bar{y})^2}}
-\]
+$$
 
 Where:
 - \( x_i \) and \( y_i \) are individual data points,
