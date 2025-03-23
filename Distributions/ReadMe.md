@@ -17,49 +17,39 @@ This repository provides an in-depth exploration of probability theory and its r
 - [References](#references)
 
 ## Probability
-Probability is a measure that quantifies the likelihood of an event occurring within a defined sample space. The probability of an event \(A\) is defined as:
+Probability is a measure that quantifies the likelihood of an event occurring within a defined sample space. The probability of an event $$A$$ is defined as:
 
-$$
-P(A) = \frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes}}
-$$
+$$ P(A) = \frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes}} $$
 
 Key points include:
 - **Sample Space:** The set of all possible outcomes.
 - **Event:** A subset of the sample space.
-- **Axioms of Probability:** Including non-negativity, normalization (\(P(S) = 1\)), and additivity for mutually exclusive events.
+- **Axioms of Probability:** Including non-negativity, normalization ($$ P(S) = 1 $$), and additivity for mutually exclusive events.
 
 ## Joint, Marginal, and Conditional Probability
-Understanding the relationship between events is crucial in probability theory:
+Understanding the relationship between events is crucial in probability theory.
 
 ### Joint Probability
-- **Definition:** The probability of two events \(A\) and \(B\) occurring simultaneously is denoted as \(P(A \cap B)\).
+- **Definition:** The probability of two events $$A$$ and $$B$$ occurring simultaneously is denoted as $$ P(A \cap B) $$.
 - **Formula:** For independent events, it simplifies to:
   
-  $$
-  P(A \cap B) = P(A) \times P(B)
-  $$
+$$ P(A \cap B) = P(A) \times P(B) $$
 
 ### Marginal Probability
 - **Definition:** The probability of an event irrespective of the outcomes of other variables. It is obtained by summing or integrating over the possible values of the other variables.
-- **Example:** If \(A\) and \(B\) are joint events, then the marginal probability of \(A\) is:
+- **Example:** If $$A$$ and $$B$$ are joint events, then the marginal probability of $$A$$ is:
 
-  $$
-  P(A) = \sum_{B} P(A, B)
-  $$
+$$ P(A) = \sum_{B} P(A, B) $$
 
 ### Conditional Probability
-- **Definition:** The probability of an event \(A\) given that another event \(B\) has occurred is denoted as \(P(A|B)\).
+- **Definition:** The probability of an event $$A$$ given that another event $$B$$ has occurred is denoted as $$ P(A|B) $$.
 - **Formula:**
 
-  $$
-  P(A|B) = \frac{P(A \cap B)}{P(B)} \quad \text{(provided } P(B) > 0\text{)}
-  $$
+$$ P(A|B) = \frac{P(A \cap B)}{P(B)} \quad \text{(provided } P(B) > 0\text{)} $$
 
 - **Bayes’ Theorem:** An essential tool for updating probabilities:
 
-  $$
-  P(A|B) = \frac{P(B|A)P(A)}{P(B)}
-  $$
+$$ P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)} $$
 
 ## Probability Distributions
 Probability distributions describe how probabilities are assigned to different outcomes. They are broadly categorized into:
@@ -76,49 +66,41 @@ Probability distributions describe how probabilities are assigned to different o
 
 ### Normal Distribution
 - **Definition:** Also known as the Gaussian distribution, it is a continuous probability distribution characterized by its bell-shaped curve.
-- **Key Parameters:** Mean (\(\mu\)) and Standard Deviation (\(\sigma\)).
+- **Key Parameters:** Mean ($$ \mu $$) and Standard Deviation ($$ \sigma $$).
 - **Formula:**
 
-  $$
-  f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{ -\frac{(x-\mu)^2}{2\sigma^2} }
-  $$
+$$ f(x) = \frac{1}{\sigma \sqrt{2\pi}} \, e^{ -\frac{(x-\mu)^2}{2\sigma^2} } $$
 
 - **Properties:** Symmetric about the mean, where approximately 68% of the data falls within one standard deviation, 95% within two, and 99.7% within three.
 
 ### Binomial Distribution
 - **Definition:** A discrete distribution representing the number of successes in a fixed number of independent Bernoulli trials.
-- **Key Parameters:** Number of trials (\(n\)) and probability of success in a single trial (\(p\)).
+- **Key Parameters:** Number of trials ($$ n $$) and probability of success in a single trial ($$ p $$).
 - **Formula:**
 
-  $$
-  P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
-  $$
+$$ P(X = k) = \binom{n}{k} \, p^k \, (1-p)^{n-k} $$
 
 - **Applications:** Used in scenarios with two possible outcomes (e.g., success/failure, yes/no).
 
 ### Poisson Distribution
 - **Definition:** A discrete distribution expressing the probability of a given number of events occurring in a fixed interval of time or space.
-- **Key Parameter:** The average number of occurrences (\(\lambda\)).
+- **Key Parameter:** The average number of occurrences ($$ \lambda $$).
 - **Formula:**
 
-  $$
-  P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}
-  $$
+$$ P(X = k) = \frac{\lambda^k \, e^{-\lambda}}{k!} $$
 
 - **Applications:** Commonly used for modeling rare events.
 
 ## Bayesian Probability
 Bayesian probability offers a framework for updating beliefs in light of new evidence. It is fundamentally based on Bayes' theorem:
 
-$$
-P(H|E) = \frac{P(E|H) \cdot P(H)}{P(E)}
-$$
+$$ P(H|E) = \frac{P(E|H) \cdot P(H)}{P(E)} $$
 
 Where:
-- \(P(H)\) is the prior probability of the hypothesis.
-- \(P(E|H)\) is the likelihood of observing the evidence given the hypothesis.
-- \(P(E)\) is the total probability of the evidence.
-- \(P(H|E)\) is the posterior probability after taking the evidence into account.
+- $$ P(H) $$ is the prior probability of the hypothesis.
+- $$ P(E|H) $$ is the likelihood of observing the evidence given the hypothesis.
+- $$ P(E) $$ is the total probability of the evidence.
+- $$ P(H|E) $$ is the posterior probability after taking the evidence into account.
 
 ### Key Concepts:
 - **Prior:** Initial belief before seeing the data.
