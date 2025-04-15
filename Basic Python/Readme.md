@@ -39,13 +39,13 @@ with open('example.txt', 'r') as file:
 
 ```mermaid
 flowchart TD
-    A[Start] --> B[Try Block]
-    B --> C{Error Occurs?}
-    C -- Yes --> D[Execute Except Block]
-    D --> E[Handle Error]
-    C -- No --> F[Continue Execution]
-    E --> G[End]
-    F --> G[End]
+    A[Start] --- B[Try Block]
+    B --- C{Error Occurs?}
+    C -- Yes --- D[Execute Except Block]
+    D --- E[Handle Error]
+    C -- No --- F[Continue Execution]
+    E --- G[End]
+    F --- G[End]
 ```
 
 ### Key Concepts
@@ -87,9 +87,9 @@ print(cube(3))  # Output: 27
 ### Flow of Function Calls
 ```mermaid
 flowchart TD
-    A[Call Function] --> B[Execute Code Block]
-    B --> C[Return Value]
-    C --> D[Assign/Use Returned Value]
+    A[Call Function] --- B[Execute Code Block]
+    B --- C[Return Value]
+    C --- D[Assign/Use Returned Value]
 ```
 
 ### Key Concepts
@@ -123,10 +123,10 @@ print(next(iterator))  # Output: 2
 ### Diagram: Iterable vs. Iterator
 ```mermaid
 flowchart LR
-    A[Iterable (e.g., list)] --> B[Iterator]
-    B --> C[Element 1]
-    B --> D[Element 2]
-    B --> E[Element 3]
+    A[Iterable (e.g., list)] --- B[Iterator]
+    B --- C[Element 1]
+    B --- D[Element 2]
+    B --- E[Element 3]
 ```
 
 ### Key Concepts
@@ -157,9 +157,9 @@ print(greet("Bob", greeting="Hi"))  # Overridden greeting
 ### Diagram: Parameter Passing
 ```mermaid
 flowchart TD
-    A[Function Definition] --> B[Positional Arguments]
-    A --> C[Keyword Arguments]
-    C --> D[Default Values]
+    A[Function Definition] --- B[Positional Arguments]
+    A --- C[Keyword Arguments]
+    C --- D[Default Values]
 ```
 
 ### Key Concepts
@@ -237,10 +237,10 @@ print(evens)  # Output: [2, 4, 6]
 
 ```mermaid
 flowchart TD
-    A[Iterable] --> B[map(Function)]
-    B --> C[Transformed Iterable]
-    A --> D[filter(Predicate)]
-    D --> E[Filtered Iterable]
+    A[Iterable] --- B[map(Function)]
+    B --- C[Transformed Iterable]
+    A --- D[filter(Predicate)]
+    D --- E[Filtered Iterable]
 ```
 
 ### Key Concepts

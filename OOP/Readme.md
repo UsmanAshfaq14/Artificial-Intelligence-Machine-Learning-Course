@@ -32,8 +32,8 @@ This guide delves into the core object-oriented programming (OOP) concepts in Py
 ### Diagram: Abstraction Overview
 ```mermaid
 flowchart TD
-    A[User Interface] --> B[Abstraction Layer]
-    B --> C[Complex Internal Processes]
+    A[User Interface] --- B[Abstraction Layer]
+    B --- C[Complex Internal Processes]
 ```
 
 ---
@@ -50,8 +50,8 @@ flowchart TD
 ### Diagram: Aggregation Relationship
 ```mermaid
 flowchart LR
-    A[Container Object] --> B[Part Object 1]
-    A --> C[Part Object 2]
+    A[Container Object] --- B[Part Object 1]
+    A --- C[Part Object 2]
 ```
 
 ---
@@ -90,7 +90,7 @@ classDiagram
 ### Diagram: Composition Relationship
 ```mermaid
 flowchart LR
-    A[Composite Object] -- contains --> B[Component Object]
+    A[Composite Object] -- contains --- B[Component Object]
 ```
 
 ---
@@ -107,8 +107,8 @@ flowchart LR
 ### Diagram: Dynamic Polymorphism Flow
 ```mermaid
 flowchart TD
-    A[Base Class Method Call] --> B[Determined at Runtime]
-    B --> C[Derived Class Implementation]
+    A[Base Class Method Call] --- B[Determined at Runtime]
+    B --- C[Derived Class Implementation]
 ```
 
 ---
@@ -126,8 +126,8 @@ flowchart TD
 ### Diagram: Data Class Concept
 ```mermaid
 flowchart TD
-    A[Data Class Declaration] --> B[Auto-generated Methods]
-    B --> C[Initialization, Representation, Comparison]
+    A[Data Class Declaration] --- B[Auto-generated Methods]
+    B --- C[Initialization, Representation, Comparison]
 ```
 
 ---
@@ -144,9 +144,9 @@ flowchart TD
 ### Diagram: Encapsulation Structure
 ```mermaid
 flowchart TD
-    A[Class Interface] --> B[Public Members]
-    A --> C[Protected Members]
-    A --> D[Private Members (Name Mangled)]
+    A[Class Interface] --- B[Public Members]
+    A --- C[Protected Members]
+    A --- D[Private Members (Name Mangled)]
 ```
 
 ---
@@ -163,8 +163,8 @@ flowchart TD
 ### Diagram: Inheritance Hierarchy
 ```mermaid
 flowchart TD
-    A[Base Class] --> B[Derived Class 1]
-    A --> C[Derived Class 2]
+    A[Base Class] --- B[Derived Class 1]
+    A --- C[Derived Class 2]
 ```
 
 ---
@@ -181,8 +181,8 @@ flowchart TD
 ### Diagram: Magic Method Integration
 ```mermaid
 flowchart TD
-    A[Object Operation] --> B[Magic Method Call]
-    B --> C[Custom Behavior Defined in Class]
+    A[Object Operation] --- B[Magic Method Call]
+    B --- C[Custom Behavior Defined in Class]
 ```
 
 ---
@@ -199,10 +199,10 @@ flowchart TD
 ### Diagram: MRO Flow
 ```mermaid
 flowchart TD
-    A[Derived Class] --> B[First Parent]
-    A --> C[Second Parent]
-    B & C --> D[Common Ancestor]
-    D --> E[Final Resolution Order]
+    A[Derived Class] --- B[First Parent]
+    A --- C[Second Parent]
+    B & C --- D[Common Ancestor]
+    D --- E[Final Resolution Order]
 ```
 
 ---
@@ -219,7 +219,7 @@ A **Nested Class** is a class defined within the scope of another class. This is
 ### Diagram: Nested Class Relationship
 ```mermaid
 flowchart TD
-    A[Outer Class] --> B[Nested Class]
+    A[Outer Class] --- B[Nested Class]
 ```
 
 ---
@@ -236,8 +236,8 @@ flowchart TD
 ### Diagram: Operator Overloading Concept
 ```mermaid
 flowchart TD
-    A[Operator (e.g., +)] --> B[Overloaded in Custom Class]
-    B --> C[Custom Behavior Defined]
+    A[Operator (e.g., +)] --- B[Overloaded in Custom Class]
+    B --- C[Custom Behavior Defined]
 ```
 
 ---
@@ -254,9 +254,9 @@ flowchart TD
 ### Diagram: Polymorphism Overview
 ```mermaid
 flowchart TD
-    A[Common Interface] --> B[Class Implementation 1]
-    A --> C[Class Implementation 2]
-    B & C --> D[Different Behaviors for the Same Method Call]
+    A[Common Interface] --- B[Class Implementation 1]
+    A --- C[Class Implementation 2]
+    B & C --- D[Different Behaviors for the Same Method Call]
 ```
 
 ---
