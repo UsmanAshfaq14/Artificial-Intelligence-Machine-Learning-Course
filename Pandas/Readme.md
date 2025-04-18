@@ -1,8 +1,3 @@
-Below is a comprehensive `README.md` file in Markdown format for Pandas. This file details the topics covered, including data structures, selection/indexing, operations on DataFrames, and handling missing data. It serves as a thorough teaching aid and reference for students.
-
----
-
-```markdown
 # Introduction to Pandas
 
 Pandas is an open-source Python library that provides high-performance, easy-to-use data structures and data analysis tools. It is built on top of NumPy and is essential for data manipulation and analysis, offering powerful and flexible data handling capabilities through its two main data structures: Series and DataFrame.
@@ -302,4 +297,3 @@ Mastering these concepts provides a strong foundation for advanced data analysis
 - [Data Wrangling with Pandas Cheatsheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf)
 
 ---
-```

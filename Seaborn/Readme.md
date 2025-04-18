@@ -1,8 +1,3 @@
-Below is a comprehensive `README.md` file in Markdown format for Seaborn. This file details the topics covered, explanations, usage examples, and the interpretation of each plot type. You can use this document both as a teaching aid in class and as a reference for later study.
-
----
-
-```markdown
 # Introduction to Seaborn
 
 Seaborn is a powerful Python data visualization library built on top of Matplotlib. It provides a high-level interface for creating attractive and informative statistical graphics. The library simplifies the process of creating complex visualizations and is particularly useful for statistical data analysis.
@@ -312,4 +307,3 @@ Understanding these plots allows students and practitioners to quickly gain insi
 - [Understanding Statistical Data Visualization](https://towardsdatascience.com/)
 
 ---
-```

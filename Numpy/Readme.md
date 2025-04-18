@@ -1,8 +1,3 @@
-Below is a comprehensive `README.md` file in Markdown format for NumPy. This document details the concepts covered, including array creation, attributes and methods, and operations on arrays. It also explains the usage, importance, and interpretation of these functions. You can use this file as both a teaching aid and a reference guide for further study.
-
----
-
-```markdown
 # Introduction to NumPy
 
 NumPy (Numerical Python) is the foundational package for numerical computing in Python. It provides powerful data structures (especially the multi-dimensional array object, `ndarray`) and a wide range of mathematical functions to work efficiently on large datasets. NumPy is essential for data analysis, machine learning, scientific computing, and many other fields where high performance and ease of use are crucial.
@@ -262,4 +257,3 @@ Mastering NumPy is essential for anyone working with data in Python, as it forms
 - [SciPy Lecture Notes](https://scipy-lectures.org/)
 
 ---
-```
