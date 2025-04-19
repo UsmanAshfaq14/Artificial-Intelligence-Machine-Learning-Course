@@ -19,7 +19,7 @@ print("Array using np.arange:", array_arange)
 
 # c) Creating an array using a built-in method: np.linspace.
 # np.linspace(start, stop, num) creates an array of 'num' equally spaced values between 'start' and 'stop'.
-array_linspace = np.linspace(0, 1, 5)  # Creates 5 numbers between 0 and 1
+array_linspace = np.linspace(0,5, 5)  # Creates 5 numbers between 0 and 1
 print("Array using np.linspace:", array_linspace)
 
 # d) Creating an array with random values using np.random.
@@ -102,5 +102,5 @@ print("Concatenated array:", concatenated_array)
 # f) Splitting an array.
 # np.split() splits an array into multiple sub-arrays.
 # Here, we split the concatenated array into 2 equal parts.
-split_arrays = np.split(concatenated_array, 2)
+split_arrays = np.split(concatenated_array, 3)
 print("Arrays after splitting concatenated array into 2 parts:", split_arrays)
