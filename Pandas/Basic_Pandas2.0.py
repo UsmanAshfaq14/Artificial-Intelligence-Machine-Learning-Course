@@ -124,6 +124,8 @@ df_plot = pd.DataFrame({
     'C': np.random.rand(10)
 })
 
+print(df_plot)
+
 # ---- Line Plot:
 df_plot.plot.line(title="Line Plot")
 plt.show()  # Display the line plot

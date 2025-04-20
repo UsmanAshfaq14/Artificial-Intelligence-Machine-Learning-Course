@@ -1,7 +1,3 @@
-# -----------------------------------------------------------------------------
-# Section 1: Data Loading & Saving
-# -----------------------------------------------------------------------------
-
 import numpy as np
 
 # Create a sample 2D array (matrix) for demonstration.
