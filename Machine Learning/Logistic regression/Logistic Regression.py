@@ -24,7 +24,7 @@ clf.fit(X, y)
 #    (weights and bias) that minimize classification errors.
 
 # 5) Make a prediction on new data:
-prediction = clf.predict(np.array([[3.5]]))
+prediction = clf.predict(np.array([[6.5]]))
 #    We ask: if someone studies 3.5 hours, will they pass or fail?
 #    predict() returns an array of class labels—in our case [1] meaning “pass”.
 

@@ -2,12 +2,12 @@ from sklearn.linear_model import LinearRegression  # brings in our regression al
 import numpy as np                               # array-handling tools
 
 # 1) Input data (features):
-X = np.array([[1], [2], [3], [4], [5]])
-#    5 examples → hours studied 1–5.
+X = np.array([[2], [4], [6], [8], [10]])
+#    5 examples → hours studied 2-10.
 
 # 2) Output data (targets):
-y = np.array([50, 55, 65, 70, 75])
-#    Corresponding exam scores out of 100.
+y = np.array([40, 60, 80, 100, 120])
+#    Corresponding exam scores out of 150.
 
 # 3) Create the model:
 model = LinearRegression()
@@ -19,9 +19,9 @@ model.fit(X, y)
 #    sum of squared differences between predicted and actual scores.
 
 # 5) Predict on new data:
-predicted_score = model.predict(np.array([[6]]))
+predicted_score = model.predict(np.array([[5]]))
 #    If a student studies 6 hours, what score do we expect?
 
 # 6) Print formatted result:
-print(f"Predicted score for 6 hours: {predicted_score[0]:.2f}")
-# Output: Predicted score for 6 hours: 77.78
+print(f"Predicted score for 12 hours: {predicted_score[0]:.2f}")
+#    If a student studies 12 hours, we expect them to score 140.00.
