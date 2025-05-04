@@ -1,0 +1,164 @@
+"""
+Pure-Python NLP Preprocessing Demo (no NLTK)
+"""
+
+import re
+import unicodedata
+
+# 3. Stop Words
+STOP_WORDS = {
+    'a','an','the','and','is','in','on','at','to','it','of','for','with',
+    'that','this','as','by','from','was','were','be','been','are'
+}
+
+# 5. Lemmatization dict
+LEMMA_DICT = {
+    'better': 'good',
+    'running': 'run',
+    'geese': 'goose',
+    'went': 'go',
+}
+
+# 9. Contractions dict
+CONTRACTIONS = {
+    "don't": "do not",
+    "I'm": "I am",
+    "can't": "cannot",
+    "you're": "you are",
+    "it's": "it is",
+}
+
+# 12. WordNet-like dict
+WORDNET = {
+    'dog': {'synonyms': ['canine','pooch'], 'hypernyms': ['animal'], 'antonyms': []},
+    'good': {'synonyms': ['fine','excellent'], 'hypernyms': ['quality'], 'antonyms': ['bad']},
+}
+
+def segment_text(text):
+    sentences = re.split(r'(?<=[.!?]) +', text.strip())
+    paragraphs = text.strip().split('\n\n')
+    return sentences, paragraphs
+
+def tokenize(text):
+    return [tok for tok in re.split(r'\W+', text) if tok]
+
+def remove_stopwords(tokens):
+    return [t for t in tokens if t.lower() not in STOP_WORDS]
+
+def stem(word):
+    for suffix in ['ing','ed','ly','es','s']:
+        if word.lower().endswith(suffix) and len(word) > len(suffix)+1:
+            return word[:-len(suffix)]
+    return word
+
+def lemmatization(word):
+    return LEMMA_DICT.get(word.lower(), word)
+
+def pos_tag(tokens):
+    tags = []
+    for tok in tokens:
+        t = tok.lower()
+        if t.endswith('ing'):
+            tags.append((tok, 'VBG'))
+        elif t.endswith('ed'):
+            tags.append((tok, 'VBD'))
+        elif tok[0].isupper():
+            tags.append((tok, 'NNP'))
+        elif t in {'a','an','the'}:
+            tags.append((tok, 'DT'))
+        elif t in STOP_WORDS:
+            tags.append((tok, 'STOP'))
+        else:
+            tags.append((tok, 'NN'))
+    return tags
+
+def ner(tokens):
+    ents = []
+    for tok in tokens:
+        if re.match(r'^[A-Z][a-z]+$', tok):
+            ents.append((tok, 'ENTITY'))
+        else:
+            ents.append((tok, 'O'))
+    return ents
+
+def normalize(text):
+    text = text.lower()
+    return unicodedata.normalize('NFC', text)
+
+def expand_contractions(text):
+    for c, full in CONTRACTIONS.items():
+        text = text.replace(c, full)
+    return text
+
+def extract_patterns(text):
+    emails = re.findall(r'\S+@\S+\.\S+', text)
+    dates  = re.findall(r'\d{4}-\d{2}-\d{2}', text)
+    return emails, dates
+
+def chunk_np(pos_tagged):
+    chunks = []
+    current = []
+    for word, tag in pos_tagged:
+        if tag in {'DT','JJ','NN','NNP'}:
+            current.append(word)
+        else:
+            if current:
+                chunks.append((' '.join(current), 'NP'))
+                current = []
+    if current:
+        chunks.append((' '.join(current), 'NP'))
+    return chunks
+
+def wordnet_lookup(word):
+    return WORDNET.get(word.lower(), {})
+
+if __name__ == "__main__":
+    text = "Hello there! How's it going today? I'm testing NLP code.\n\nIt works well with Pandas Inc. in 2025-05-03."
+    # 1. Segmentation
+    sents, paras = segment_text(text)
+    print("Sentences:", sents)
+    print("Paragraphs:", paras)
+
+    # 2. Tokenization
+    toks = tokenize(text)
+    print("Tokens:", toks)
+
+    # 3. Stop Words
+    filtered = remove_stopwords(toks)
+    print("Filtered:", filtered)
+
+    # 4. Stemming
+    stems = [stem(w) for w in toks]
+    print("Stems:", stems)
+
+    # 5. Lemmatization
+    lems = [lemmatize(w) for w in toks]
+    print("Lemmas:", lems)
+
+    # 6. POS Tagging
+    pos = pos_tag(toks)
+    print("POS Tags:", pos)
+
+    # 7. NER
+    entities = ner(toks)
+    print("Entities:", entities)
+
+    # 8. Normalization
+    norm = normalize(text)
+    print("Normalized:", norm)
+
+    # 9. Contraction Expansion
+    exp = expand_contractions(text)
+    print("Expanded:", exp)
+
+    # 10. Regex Extraction
+    emails, dates = extract_patterns(text)
+    print("Emails:", emails, "Dates:", dates)
+
+    # 11. Chunking
+    chunks = chunk_np(pos)
+    print("Chunks:", chunks)
+
+    # 12. WordNet Lookup
+    wn_info = wordnet_lookup('dog')
+    print("WordNet dog:", wn_info)
